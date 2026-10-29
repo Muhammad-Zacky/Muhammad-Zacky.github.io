@@ -53,137 +53,200 @@
   ],
   "sameAs": [
     "https://github.com/Muhammad-Zacky",
-    "https://bugcrowd.com/Muhammad-Zacky"
-    /* , "https://www.linkedin.com/in/USERNAME-KAMU"  <-- tambahkan link LinkedIn kamu di sini */
+    "https://bugcrowd.com/Muhammad-Zacky",
+    "https://www.linkedin.com/in/zcky"
   ]
 }
 </script>
 
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet" />
+
 <style>
   :root{
-    --bg:#0d0f14; --surface:#161922; --surface2:#1d212c;
-    --text:#e7e9ee; --muted:#9aa3b2; --accent:#7c5cff; --accent2:#22d3ee;
-    --border:#262b38;
+    --bg:#0f0f11;
+    --text:#ececec;
+    --muted:#8c8c93;
+    --faint:#242428;
+    --hair:#1e1e22;
   }
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth}
   body{
-    font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
-    background:var(--bg); color:var(--text); line-height:1.6;
+    background:var(--bg);
+    color:var(--text);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    line-height:1.65;
     -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
   }
-  .wrap{max-width:820px;margin:0 auto;padding:0 20px}
-  a{color:var(--accent2);text-decoration:none}
-  a:hover{text-decoration:underline}
+  .wrap{
+    max-width:680px;
+    margin:0 auto;
+    padding:96px 28px 72px;
+    animation:rise .7s cubic-bezier(.2,.7,.2,1) both;
+  }
+  @keyframes rise{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+  @media (prefers-reduced-motion:reduce){.wrap{animation:none}}
 
-  /* Hero */
-  header{
-    padding:80px 0 56px; text-align:center;
-    background:radial-gradient(900px 400px at 50% -10%, rgba(124,92,255,.18), transparent 70%);
+  .eyebrow{
+    font-size:.72rem;
+    text-transform:uppercase;
+    letter-spacing:.22em;
+    color:var(--muted);
+    margin-bottom:22px;
   }
-  .avatar{
-    width:112px;height:112px;border-radius:50%;margin:0 auto 22px;
-    background:linear-gradient(135deg,var(--accent),var(--accent2));
-    display:flex;align-items:center;justify-content:center;
-    font-size:42px;font-weight:700;color:#fff;
-    box-shadow:0 10px 40px rgba(124,92,255,.35);
+  h1{
+    font-family:"Newsreader",Georgia,serif;
+    font-weight:400;
+    font-size:clamp(2.7rem,8vw,4.3rem);
+    line-height:1.02;
+    letter-spacing:-.015em;
+    margin-bottom:18px;
   }
-  h1{font-size:2.4rem;letter-spacing:-.02em}
-  .role{color:var(--accent);font-weight:600;margin-top:6px}
-  .loc{color:var(--muted);margin-top:4px;font-size:.95rem}
-  .cta{margin-top:26px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
-  .btn{
-    padding:10px 18px;border-radius:10px;font-weight:600;font-size:.92rem;
-    border:1px solid var(--border);background:var(--surface);color:var(--text);
-    transition:.15s;
+  .role{
+    font-family:"Newsreader",Georgia,serif;
+    font-style:italic;
+    font-weight:300;
+    font-size:clamp(1.15rem,3.4vw,1.5rem);
+    color:var(--muted);
+    margin-bottom:34px;
   }
-  .btn:hover{border-color:var(--accent);transform:translateY(-1px);text-decoration:none}
-  .btn.primary{background:var(--accent);border-color:var(--accent);color:#fff}
+  .lead{
+    font-size:1.0625rem;
+    color:#cfcfd4;
+    max-width:60ch;
+  }
+  .lead strong{color:var(--text);font-weight:600}
 
-  /* Sections */
-  section{padding:34px 0;border-top:1px solid var(--border)}
-  h2{font-size:1.1rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin-bottom:18px}
-  p.lead{color:var(--text);font-size:1.05rem}
-
-  .cards{display:grid;gap:12px}
-  .card{
-    background:var(--surface);border:1px solid var(--border);border-radius:12px;
-    padding:16px 18px;display:flex;gap:14px;align-items:flex-start;
-  }
-  .card .ico{font-size:1.3rem;line-height:1.3}
-  .card b{color:var(--text)}
-  .card span{color:var(--muted);font-size:.92rem}
-
-  .tags{display:flex;flex-wrap:wrap;gap:8px}
-  .tag{
-    background:var(--surface2);border:1px solid var(--border);
-    padding:6px 12px;border-radius:999px;font-size:.85rem;color:var(--text)
+  hr{
+    border:0;
+    border-top:1px solid var(--hair);
+    margin:56px 0 40px;
   }
 
-  footer{padding:40px 0 60px;text-align:center;color:var(--muted);font-size:.85rem}
+  .label{
+    font-size:.72rem;
+    text-transform:uppercase;
+    letter-spacing:.2em;
+    color:var(--muted);
+    margin-bottom:26px;
+  }
+
+  /* Selected work list */
+  ol.work{list-style:none}
+  ol.work li{
+    display:grid;
+    grid-template-columns:2.4rem 1fr;
+    gap:4px 18px;
+    padding:20px 0;
+    border-top:1px solid var(--hair);
+  }
+  ol.work li:first-child{border-top:0}
+  .num{
+    font-family:"Newsreader",Georgia,serif;
+    font-size:1rem;
+    color:var(--muted);
+    padding-top:2px;
+  }
+  .work-title{font-size:1.06rem;color:var(--text)}
+  .work-desc{grid-column:2;color:var(--muted);font-size:.94rem;margin-top:2px}
+
+  .skills{color:var(--muted);font-size:.98rem;line-height:2}
+  .skills b{color:var(--text);font-weight:500}
+
+  .links{display:flex;flex-wrap:wrap;gap:26px;margin-top:8px}
+  .links a{
+    color:var(--text);
+    text-decoration:none;
+    font-size:1rem;
+    position:relative;
+    padding-bottom:3px;
+  }
+  .links a::after{
+    content:"";position:absolute;left:0;bottom:0;
+    width:100%;height:1px;background:var(--muted);
+    transform:scaleX(0);transform-origin:left;
+    transition:transform .25s ease;
+  }
+  .links a:hover::after{transform:scaleX(1)}
+  .links a .ext{color:var(--muted);font-size:.78rem;margin-left:6px}
+
+  footer{
+    margin-top:64px;
+    color:var(--muted);
+    font-size:.82rem;
+    letter-spacing:.02em;
+  }
 </style>
 </head>
 <body>
+<div class="wrap">
 
-<header>
-  <div class="wrap">
-    <!-- Ganti inisial ini dengan <img src="foto.jpg" class="avatar"> kalau mau pakai foto -->
-    <div class="avatar">MZ</div>
-    <h1>Muhammad Zacky</h1>
-    <div class="role">Application Security Engineer · Bug Hunter</div>
-    <div class="loc">📍 Padang, Sumatera Barat, Indonesia</div>
-    <div class="cta">
-      <!-- GANTI href LinkedIn di bawah -->
-      <a class="btn primary" href="#" target="_blank" rel="noopener">LinkedIn</a>
-      <a class="btn" href="https://github.com/Muhammad-Zacky" target="_blank" rel="noopener">GitHub</a>
-      <a class="btn" href="https://bugcrowd.com/Muhammad-Zacky" target="_blank" rel="noopener">Bugcrowd</a>
-    </div>
-  </div>
-</header>
+  <p class="eyebrow">Padang · Sumatera Barat · Indonesia</p>
 
-<main class="wrap">
+  <h1>Muhammad Zacky</h1>
+  <p class="role">Application Security Engineer &amp; Bug Hunter</p>
 
-  <section>
-    <h2>About</h2>
-    <p class="lead">
-      I'm <b>Muhammad Zacky</b>, a final-year Information Technology student at
-      <b>Politeknik Negeri Padang</b>, focused on <b>application security (AppSec)</b>
-      and <b>full-stack web development</b>. I find and responsibly disclose
-      vulnerabilities through VDP and bug bounty programs, and build web applications
-      with Laravel and React (Inertia.js).
-    </p>
-  </section>
+  <p class="lead">
+    I'm <strong>Muhammad Zacky</strong>, a final-year Information Technology student at
+    <strong>Politeknik Negeri Padang</strong>, focused on <strong>application security</strong>
+    and full-stack web development. I find and responsibly disclose vulnerabilities through
+    VDP and bug bounty programs, and build web applications with Laravel and React.
+  </p>
 
-  <section>
-    <h2>Highlights</h2>
-    <div class="cards">
-      <div class="card"><div class="ico">🚀</div><div><b>NASA — VDP Hall of Fame</b><br><span>Recognized for responsibly disclosing a security vulnerability.</span></div></div>
-      <div class="card"><div class="ico">🎓</div><div><b>University of Melbourne — Critical (P1)</b><br><span>Independently found & validated a critical web vulnerability via their VDP.</span></div></div>
-      <div class="card"><div class="ico">🥈</div><div><b>Juara 2 — KMIPN VII</b><br><span>National Polytechnic Informatics Student Competition.</span></div></div>
-      <div class="card"><div class="ico">🥈</div><div><b>Juara 2 — ICT Business Plan (PKTOS)</b><br><span>National-level competition.</span></div></div>
-      <div class="card"><div class="ico">📜</div><div><b>Certifications</b><br><span>AWS Cloud Foundations · Web Developer (Kominfo).</span></div></div>
-    </div>
-  </section>
+  <hr />
 
-  <section>
-    <h2>Skills & Focus</h2>
-    <div class="tags">
-      <span class="tag">Application Security</span>
-      <span class="tag">Bug Bounty / VDP</span>
-      <span class="tag">Web Pentesting</span>
-      <span class="tag">Laravel</span>
-      <span class="tag">React (Inertia.js)</span>
-      <span class="tag">PHP</span>
-      <span class="tag">JavaScript</span>
-      <span class="tag">AWS</span>
-    </div>
-  </section>
+  <p class="label">Selected Work</p>
+  <ol class="work">
+    <li>
+      <span class="num">01</span>
+      <span class="work-title">NASA — VDP Hall of Fame</span>
+      <span class="work-desc">Recognized for responsibly disclosing a security vulnerability.</span>
+    </li>
+    <li>
+      <span class="num">02</span>
+      <span class="work-title">University of Melbourne — Critical (P1)</span>
+      <span class="work-desc">Independently found and validated a critical web vulnerability via their VDP.</span>
+    </li>
+    <li>
+      <span class="num">03</span>
+      <span class="work-title">Juara 2 — KMIPN VII</span>
+      <span class="work-desc">National Polytechnic Informatics Student Competition.</span>
+    </li>
+    <li>
+      <span class="num">04</span>
+      <span class="work-title">Juara 2 — ICT Business Plan (PKTOS)</span>
+      <span class="work-desc">National-level competition.</span>
+    </li>
+    <li>
+      <span class="num">05</span>
+      <span class="work-title">Certifications</span>
+      <span class="work-desc">AWS Cloud Foundations · Web Developer (Kominfo).</span>
+    </li>
+  </ol>
 
-</main>
+  <hr />
 
-<footer>
-  © <span id="y"></span> Muhammad Zacky · Padang, Indonesia
-</footer>
+  <p class="label">Focus</p>
+  <p class="skills">
+    <b>Application Security</b> · Bug Bounty / VDP · Web Penetration Testing ·
+    <b>Laravel</b> · <b>React</b> (Inertia.js) · PHP · JavaScript · AWS
+  </p>
+
+  <hr />
+
+  <p class="label">Elsewhere</p>
+  <nav class="links">
+    <a href="https://www.linkedin.com/in/zcky" target="_blank" rel="noopener">LinkedIn</a>
+    <a href="https://github.com/Muhammad-Zacky" target="_blank" rel="noopener">GitHub</a>
+    <a href="https://bugcrowd.com/Muhammad-Zacky" target="_blank" rel="noopener">Bugcrowd</a>
+  </nav>
+
+  <footer>© <span id="y"></span> Muhammad Zacky · Padang, Indonesia</footer>
+
+</div>
 <script>document.getElementById('y').textContent=new Date().getFullYear();</script>
 </body>
 </html>
